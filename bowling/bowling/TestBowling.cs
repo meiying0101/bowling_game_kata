@@ -20,5 +20,30 @@ namespace bowling
             }
             Assert.That(g.GetFinalScore(), Is.EqualTo(0));
         }
+        [Test]
+        public void AllOne()
+        {
+            Game g = new Game();
+            for (int i = 0; i < 20; i++)
+            {
+                g.SetPins(1);
+            }
+            Assert.That(g.GetFinalScore(), Is.EqualTo(20));
+        }
+        /*[Test]
+        public void OneSpare()
+        {
+            Game g = new Game();
+            for (int i = 0; i < 20; i++)
+            {
+                if (i == 4)
+                    g.SetPins(9);
+                else
+                g.SetPins(1);
+                
+
+            }
+            Assert.That(g.GetFinalScore(), Is.EqualTo(29));
+        }*/
     }
 }
