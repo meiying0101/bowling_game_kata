@@ -19,10 +19,28 @@ namespace bowling
         {
             for (int i = 0; i < round.Count();i+=1)
             {
-              /*  if(i%2==1 && round[i-1]+round[i]==10)
+                if( round[i]==10)
                 {
-
-                }*/
+                    int time = 2;
+                    int tmp = i;
+                    while(time>0)
+                    {                   
+                        if(round[tmp+1]!=0)
+                        {
+                            total += round[tmp + 1];
+                            tmp += 1;
+                            time-=1;
+                        }
+                        else
+                        {
+                            tmp += 1;
+                        }
+                    }
+                }
+                else if(i%2==1 && round[i-1]+round[i]==10)
+                {
+                    total += round[i + 1];
+                }
                 total += round[i];
             }
             return total;    

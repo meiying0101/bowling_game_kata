@@ -30,7 +30,7 @@ namespace bowling
             }
             Assert.That(g.GetFinalScore(), Is.EqualTo(20));
         }
-        /*[Test]
+        [Test]
         public void OneSpare()
         {
             Game g = new Game();
@@ -44,6 +44,102 @@ namespace bowling
 
             }
             Assert.That(g.GetFinalScore(), Is.EqualTo(29));
-        }*/
+        }
+        [Test]
+        public void OneStrike()
+        {
+            Game g = new Game();
+            for (int i = 0; i < 20; i++)
+            {
+                if (i == 4)
+                    g.SetPins(0);
+                else if (i == 5)
+                    g.SetPins(10);
+                else
+                    g.SetPins(1);
+            }
+            Assert.That(g.GetFinalScore(), Is.EqualTo(30));
+        }
+        [Test]
+        public void multiSpare()
+        {
+            Game g = new Game();
+            for (int i = 0; i < 20; i++)
+            {
+                if (i == 4)
+                    g.SetPins(3);
+                else if (i == 5)
+                    g.SetPins(7);
+                else if (i == 8)
+                    g.SetPins(6);
+                else if (i == 9)
+                    g.SetPins(4);
+                else
+                    g.SetPins(1);
+            }
+            Assert.That(g.GetFinalScore(), Is.EqualTo(38));
+        }
+        [Test]
+        public void multiStrike()
+        {
+            Game g = new Game();
+            for (int i = 0; i < 20; i++)
+            {
+                if (i == 4)
+                    g.SetPins(0);
+                else if (i == 5)
+                    g.SetPins(10);
+                else if (i == 8)
+                    g.SetPins(0);
+                else if (i == 9)
+                    g.SetPins(10);
+                else
+                    g.SetPins(1);
+            }
+            Assert.That(g.GetFinalScore(), Is.EqualTo(40));
+        }
+        [Test]
+        public void ContiSpare()
+        {
+            Game g = new Game();
+            for (int i = 0; i < 20; i++)
+            {
+                if (i == 4)
+                    g.SetPins(3);
+                else if (i == 5)
+                    g.SetPins(7);
+                else if (i == 6)
+                    g.SetPins(6);
+                else if (i == 7)
+                    g.SetPins(4);
+                else
+                    g.SetPins(1);
+            }
+            Assert.That(g.GetFinalScore(), Is.EqualTo(43));
+        }
+        [Test]
+        public void ContiStrike()
+        {
+            Game g = new Game();
+            for (int i = 0; i < 20; i++)
+            {
+                if (i == 4)
+                    g.SetPins(0);
+                else if (i == 5)
+                    g.SetPins(10);
+                else if (i == 6)
+                    g.SetPins(0);
+                else if (i == 7)
+                    g.SetPins(10);
+                else if (i == 8)
+                    g.SetPins(0);
+                else if (i == 9)
+                    g.SetPins(10);
+                else
+                    g.SetPins(1);
+            }
+            Assert.That(g.GetFinalScore(), Is.EqualTo(77));
+        }
+
     }
 }
