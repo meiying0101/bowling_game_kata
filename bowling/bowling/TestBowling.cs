@@ -140,6 +140,61 @@ namespace bowling
             }
             Assert.That(g.GetFinalScore(), Is.EqualTo(77));
         }
+        [Test]
+        public void Test1()
+        {
+            Game g = new Game();
+             g.SetPins(0);
+             g.SetPins(10);
+             g.SetPins(9);
+             g.SetPins(1);
+             g.SetPins(0);
+             g.SetPins(10);
+             g.SetPins(7);
+             g.SetPins(3);
+             g.SetPins(0);
+             g.SetPins(10);
+             g.SetPins(2);
+             g.SetPins(8);
+             g.SetPins(0);
+             g.SetPins(10);
+             g.SetPins(5);
+             g.SetPins(5);
+             g.SetPins(0);
+             g.SetPins(10);
+             g.SetPins(1);
+             g.SetPins(9);
+             g.SetPins(10);
+            
+            Assert.That(g.GetFinalScore(), Is.EqualTo(200));
+        }
+        [Test]
+        public void Test2()
+        {
+            Game g = new Game();
+            g.SetPins(0);
+            g.SetPins(10);
+            g.SetPins(0);
+            g.SetPins(10);
+            g.SetPins(0);
+            g.SetPins(10);
+            g.SetPins(0);
+            g.SetPins(10);
+            g.SetPins(0);
+            g.SetPins(10);
+            g.SetPins(0);
+            g.SetPins(10);
+            g.SetPins(0);
+            g.SetPins(10);
+            g.SetPins(0);
+            g.SetPins(10);
+            g.SetPins(0);
+            g.SetPins(10);
+            g.SetPins(10);
+            g.SetPins(10);
+            g.SetPins(10);
 
+            Assert.That(g.GetFinalScore(), Is.EqualTo(300));
+        }
     }
 }

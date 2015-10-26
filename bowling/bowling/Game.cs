@@ -17,7 +17,7 @@ namespace bowling
 
         internal int GetFinalScore()
         {
-            for (int i = 0; i < round.Count();i+=1)
+            for (int i = 0; i < 18;i+=1)
             {
                 if( round[i]==10)
                 {
@@ -39,11 +39,29 @@ namespace bowling
                 }
                 else if(i%2==1 && round[i-1]+round[i]==10)
                 {
-                    total += round[i + 1];
+                    int time = 1;
+                    int tmp = i;
+                    while (time > 0)
+                    {
+                        if (round[tmp + 1] != 0)
+                        {
+                            total += round[tmp + 1];
+                            tmp += 1;
+                            time -= 1;
+                        }
+                        else
+                        {
+                            tmp += 1;
+                        }
+                    }
                 }
                 total += round[i];
             }
-            return total;    
+            for (int i = 18; i < round.Count();i++ )
+            {
+                total += round[i];
+            }
+                return total;    
         }
     }
 }
